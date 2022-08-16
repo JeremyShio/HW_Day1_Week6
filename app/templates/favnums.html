@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Numbers {% endblock title %}
+
+
+{% block content %}
+<h1>Hello World!!!</h1>
+
+<h3>My name is {{ user['my_name'] }}!!!</h3>
+
+<h5>Below is handful of my favorite numbers!!!</h5>
+<!-- 21, 47, 2, 30, 74 -->
+<ul>
+    {% for number in numbers %}
+        {% if number is in numbers %}
+            <li>{{ number }}</li>
+        {% else %}
+            <li>None</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock content %}
