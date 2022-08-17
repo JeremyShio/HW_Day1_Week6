@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Contacts {% endblock title %}
+
+
+{% block content %}
+<h2 class = "text-center">Enter Your Contacts Here!</h2>
+
+<form method = "post">
+    {{ form.csrf_token }}
+    <div class = "form-group">
+        {{ form.relationship.label }}
+        {{ form.relationship(class = "form-control", placeholder = "Enter relationship with contact ") }}
+
+        {{ form.first_name.label }}
+        {{ form.first_name(class = "form-control", placeholder = "Enter contact first name ") }}
+
+        {{ form.last_name.label }}
+        {{ form.last_name(class = "form-control", placeholder = "Enter contact last name ") }}
+
+        {{ form.phone_number.label }}
+        {{ form.phone_number(class = "form-control", placeholder = "Enter contact phone number ") }}
+
+        {{ form.home_address.label }}
+        {{ form.home_address(class = "form-control", placeholder = "Enter contact home address ") }}
+
+        {{ form.submit(class = "btn btn-dark w-100 mt-3") }}
+    </div>
+</form>
+
+{% endblock content %}
